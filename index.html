@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Bot Nutrivida</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="ApiAi.js"></script>
+    <script src="demoFunctions.js"></script>
+
+    <style>
+        #placeholder {
+            text-align: center;
+            margin-top: 1.5em;
+        }
+        #main-wrapper {
+            display: none;
+        }
+        .clearfix {
+            clear: both;
+        }
+
+        .debug {
+      bottom: 0;
+      position: fixed;
+      right: 0;
+    }
+    .debug__content {
+      font-size: 14px;
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    .debug__content.is-active {
+      display: block;
+      max-height: 500px;
+    }
+    .debug__btn {
+      width: 100%;
+    }
+    .spoken-response {
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: all 0.35s ease-in;
+    }
+    .spoken-response.is-active {
+      max-height: 400px;
+    }
+    .spoken-response__text {
+      background-color: #040E23;
+      color: #7584A2;
+      padding: 1em;
+    }
+    </style>
+</head>
+<body>
+<div id="main-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col s5">
+                <div class="input-field">
+                    <input placeholder="Realiza tu pedido..." id="q" type="text" >
+                    <button id="recBtn" class="btn">Hablar</button>
+                    <div id="spokenResponse" class="spoken-response">
+                      <div class="spoken-response__text"></div>
+                    </div>
+                </div>
+                <div id="result">
+                    <!--div class="left-align flow-text">test</div>
+                    <div class="right-align flow-text">one more test</div-->
+                </div>
+                <div class="debug">
+                    <div class="debug__btn btn">
+                      Debug JSON results
+                    </div>
+                    <div class="debug__content">
+                      <textarea id="response" cols="40" rows="20"></textarea>
+                    </div>
+                  </div>
+            </div>
+            <div class="col s2">
+    
+                
+            </div>
+            <!-- <div class="col s5">
+            h5>Request payload:</h5>
+            <pre id="jsonRequest"></pre
+            <h5>Response payload:</h5>
+            <pre id="jsonResponse"></pre>
+            </div> -->
+        </div>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+<script defer src="layout.js"></script>
+
+
+
+
+</html>
