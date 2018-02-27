@@ -66,10 +66,10 @@ function startRecognition() {
 
 
 
-// recognition.onstart = function(event) {
-//   respond(messageRecording);
-//   // updateRec();
-// }
+recognition.onstart = function(event) {
+respond(messageRecording);
+updateRec();
+ }
 
 
 function stopRecognition() {
@@ -77,21 +77,21 @@ function stopRecognition() {
     recognition.stop();
     recognition = null;
   }
-  // updateRec();
+  updateRec();
 }
 
-// recognition.onresult = function(event) {
-//   recognition.onend = null;
+recognition.onresult = function(event) {
+recognition.onend = null;
 
-//   var text = ""; 
-// }
+var text = ""; 
+}
 
 function stopRecognition() {
   if (recognition) {
     recognition.stop();
     recognition = null;
   }
-  // updateRec();
+   updateRec();
 }
 
 function switchRecognition() {
@@ -250,10 +250,10 @@ function respond(val) {
     node.setAttribute('data-actual-response', response);
   }
 
-  // function setResponseJSON(response) {
-  //   var node = document.getElementById("jsonResponse");
-  //   node.innerHTML = JSON.stringify(response, null, 2);
-  // }
+   function setResponseJSON(response) {
+    var node = document.getElementById("jsonResponse");
+    node.innerHTML = JSON.stringify(response, null, 2);
+  }
 
   function sendRequest() {
 
